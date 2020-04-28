@@ -38,6 +38,7 @@ import org.junit.Test;
 import java.util.Arrays;
 
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class SimpleAlignedSequenceTest {
 
@@ -75,6 +76,28 @@ public class SimpleAlignedSequenceTest {
 	public void testSimpleAlignedSequenceShort() {
 		new SimpleAlignedSequence<ProteinSequence, AminoAcidCompound>(go, Arrays.asList(new Step[] {Step.GAP,
 				Step.COMPOUND, Step.COMPOUND, Step.GAP, Step.COMPOUND, Step.GAP}));
+	}
+	@Test
+	public void testSetAlignmentFromSequence(){
+		int[] l = global.getAlignmentFromSequence();
+		assertEquals(l.length, 10);
+	}
+	@Test
+	public void testIsCircularAlignment(){
+		assertEquals(global.isCircular(), global.getLocationInAlignment().isCircular());
+	}
+
+	@Test
+	public void testEqual(){
+		assertEquals(global.equals(global), true);
+	}
+	@Test
+	public void testGetIndexCompoundAtBoundary(){
+		assertEquals(global.getIndexOf(global.getCompoundAt(1)), 1);
+	}
+	@Test
+	public void testGetLastIndexCompoundAtBoundary(){
+		assertEquals(global.getLastIndexOf(global.getCompoundAt(-1)), global.getLength()-1);
 	}
 
 	@Test
