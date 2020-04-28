@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.biojava.nbio.structure.align.client.TestStructureName
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.65 s - in org.biojava.nbio.structure.align.client.TestStructureName

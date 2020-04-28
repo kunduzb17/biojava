@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.biojava.nbio.structure.SiteTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.678 s - in org.biojava.nbio.structure.SiteTest

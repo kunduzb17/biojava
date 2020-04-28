@@ -1,0 +1,24 @@
+# Created at 2020-04-27T22:49:09.369
+2020-04-27 22:49:09.328 java[72257:11179155] CoreText note: Client requested name ".SFNS-Regular", it will get Times-Roman rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[NSFont systemFontOfSize:].
+
+# Created at 2020-04-27T22:49:09.371
+2020-04-27 22:49:09.328 java[72257:11179155] CoreText note: Set a breakpoint on CTFontLogSystemFontNameRequest to debug.
+
+# Created at 2020-04-27T22:49:09.371
+2020-04-27 22:49:09.334 java[72257:11179155] CoreText note: Client requested name ".SFNS-Bold", it will get Times-Roman rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[NSFont systemFontOfSize:].
+
+# Created at 2020-04-27T22:49:09.372
+2020-04-27 22:49:09.336 java[72257:11179155] CoreText note: Client requested name ".SFNSMono-Regular", it will get Times-Roman rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[NSFont systemFontOfSize:].
+
+# Created at 2020-04-27T22:49:09.372
+2020-04-27 22:49:09.371 java[72257:11179155] CoreText note: Client requested name ".SFNSMono-Regular", it will get Times-Roman rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[NSFont systemFontOfSize:].
+
+# Created at 2020-04-27T22:49:09.374
+2020-04-27 22:49:09.373 java[72257:11179155] CoreText note: Client requested name ".SFNSMono-Regular", it will get Times-Roman rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[NSFont systemFontOfSize:].
+
+# Created at 2020-04-27T22:49:09.390
+2020-04-27 22:49:09.389 java[72257:11179155] CoreText note: Client requested name ".SFNS-Regular", it will get Times-Roman rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[NSFont systemFontOfSize:].
+
+# Created at 2020-04-27T22:49:09.390
+2020-04-27 22:49:09.390 java[72257:11179155] CoreText note: Client requested name ".SFNS-Bold", it will get Times-Roman rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[NSFont systemFontOfSize:].
+

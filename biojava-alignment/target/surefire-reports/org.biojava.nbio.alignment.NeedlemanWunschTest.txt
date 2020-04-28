@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.biojava.nbio.alignment.NeedlemanWunschTest
+-------------------------------------------------------------------------------
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.674 s - in org.biojava.nbio.alignment.NeedlemanWunschTest

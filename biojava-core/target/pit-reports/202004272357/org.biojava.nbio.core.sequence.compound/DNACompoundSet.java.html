@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>DNACompoundSet.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/*</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *                    BioJava development code</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * This code may be freely distributed and modified under the</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * terms of the GNU Lesser General Public Licence.  This should</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * be distributed with the code.  If you do not have a copy,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * see:</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *      http://www.gnu.org/copyleft/lesser.html</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Copyright for this code is held jointly by the individual</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * authors.  These should be listed in @author doc comments.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * For more information on the BioJava project and its aims,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * or to join the biojava-l mailing list, visit the home page</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * at:</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *      http://www.biojava.org/</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Created on 01-21-2010</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package org.biojava.nbio.core.sequence.compound;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.biojava.nbio.core.sequence.template.AbstractNucleotideCompoundSet;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * @author Andy Yates</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class DNACompoundSet extends AbstractNucleotideCompoundSet&#60;NucleotideCompound&#62; {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;private static class InitaliseOnDemand {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;public static final DNACompoundSet INSTANCE = new DNACompoundSet();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public static DNACompoundSet getDNACompoundSet() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_36'/>
+36
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_36'>1</a>
+<span>
+1. getDNACompoundSet : replaced return value with null for org/biojava/nbio/core/sequence/compound/DNACompoundSet::getDNACompoundSet &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return InitaliseOnDemand.INSTANCE;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;public DNACompoundSet() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_40'/>
+40
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_40'>1</a>
+<span>
+1. &#60;init&#62; : removed call to org/biojava/nbio/core/sequence/compound/DNACompoundSet::addNucleotideCompound &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;addNucleotideCompound(&#34;A&#34;, &#34;T&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_41'/>
+41
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_41'>1</a>
+<span>
+1. &#60;init&#62; : removed call to org/biojava/nbio/core/sequence/compound/DNACompoundSet::addNucleotideCompound &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;addNucleotideCompound(&#34;T&#34;, &#34;A&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_42'/>
+42
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_42'>1</a>
+<span>
+1. &#60;init&#62; : removed call to org/biojava/nbio/core/sequence/compound/DNACompoundSet::addNucleotideCompound &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;addNucleotideCompound(&#34;G&#34;, &#34;C&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_43'/>
+43
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_43'>1</a>
+<span>
+1. &#60;init&#62; : removed call to org/biojava/nbio/core/sequence/compound/DNACompoundSet::addNucleotideCompound &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;addNucleotideCompound(&#34;C&#34;, &#34;G&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_44'/>
+44
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_44'>1</a>
+<span>
+1. &#60;init&#62; : removed call to org/biojava/nbio/core/sequence/compound/DNACompoundSet::addNucleotideCompound &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;addNucleotideCompound(&#34;N&#34;, &#34;N&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_45'/>
+45
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_45'>1</a>
+<span>
+1. &#60;init&#62; : removed call to org/biojava/nbio/core/sequence/compound/DNACompoundSet::addNucleotideCompound &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;&#9;addNucleotideCompound(&#34;-&#34;, &#34;-&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public NucleotideCompound newNucleotideCompound(String base, String complement, String... equivalents) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_50'/>
+50
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_50'>1</a>
+<span>
+1. newNucleotideCompound : negated conditional &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;&#9;if(equivalents.length == 0) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_51'/>
+51
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_51'>1</a>
+<span>
+1. newNucleotideCompound : replaced return value with null for org/biojava/nbio/core/sequence/compound/DNACompoundSet::newNucleotideCompound &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;&#9;return new NucleotideCompound(base, this, complement);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;else {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_54'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;NucleotideCompound[] compounds = new NucleotideCompound[equivalents.length];</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_55'/>
+55
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_55'>2</a>
+<span>
+1. newNucleotideCompound : negated conditional &rarr; SURVIVED<br/>
+2. newNucleotideCompound : changed conditional boundary &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;&#9;&#9;for(int i=0; i&#60;compounds.length; i++) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;&#9;compounds[i] = getCompoundForString(equivalents[i]);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_58'/>
+58
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_58'>1</a>
+<span>
+1. newNucleotideCompound : replaced return value with null for org/biojava/nbio/core/sequence/compound/DNACompoundSet::newNucleotideCompound &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;&#9;return new NucleotideCompound(base, this, complement, compounds);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19511bd0_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19511bd0_36'>36</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_36'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getDNACompoundSet<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.SequenceViewTest.testGetCompoundAt(org.biojava.nbio.core.sequence.SequenceViewTest)</span></span> replaced return value with null for org/biojava/nbio/core/sequence/compound/DNACompoundSet::getDNACompoundSet &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19511bd0_40'>40</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_40'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.DNATest.basesEqual(org.biojava.nbio.core.sequence.DNATest)</span></span> removed call to org/biojava/nbio/core/sequence/compound/DNACompoundSet::addNucleotideCompound &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19511bd0_41'>41</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_41'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.DNATest.basesEquivalent(org.biojava.nbio.core.sequence.DNATest)</span></span> removed call to org/biojava/nbio/core/sequence/compound/DNACompoundSet::addNucleotideCompound &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19511bd0_42'>42</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_42'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.DNATest.basesEquivalent(org.biojava.nbio.core.sequence.DNATest)</span></span> removed call to org/biojava/nbio/core/sequence/compound/DNACompoundSet::addNucleotideCompound &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19511bd0_43'>43</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_43'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.DNATest.basesEquivalent(org.biojava.nbio.core.sequence.DNATest)</span></span> removed call to org/biojava/nbio/core/sequence/compound/DNACompoundSet::addNucleotideCompound &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19511bd0_44'>44</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_44'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.DNATest.singleCompoundSequence(org.biojava.nbio.core.sequence.DNATest)</span></span> removed call to org/biojava/nbio/core/sequence/compound/DNACompoundSet::addNucleotideCompound &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19511bd0_45'>45</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_45'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> removed call to org/biojava/nbio/core/sequence/compound/DNACompoundSet::addNucleotideCompound &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19511bd0_50'>50</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_50'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>newNucleotideCompound<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19511bd0_51'>51</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_51'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>newNucleotideCompound<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.DNATest.basesEqual(org.biojava.nbio.core.sequence.DNATest)</span></span> replaced return value with null for org/biojava/nbio/core/sequence/compound/DNACompoundSet::newNucleotideCompound &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19511bd0_55'>55</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_55'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>newNucleotideCompound<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.DNATest.basesEqual(org.biojava.nbio.core.sequence.DNATest)</span></span> changed conditional boundary &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>newNucleotideCompound<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19511bd0_58'>58</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19511bd0_58'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>newNucleotideCompound<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.DNATest.basesEqual(org.biojava.nbio.core.sequence.DNATest)</span></span> replaced return value with null for org/biojava/nbio/core/sequence/compound/DNACompoundSet::newNucleotideCompound &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>BOOLEAN_FALSE_RETURN</li>
+<li class='mutator'>BOOLEAN_TRUE_RETURN</li>
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+<li class='mutator'>EMPTY_RETURN_VALUES</li>
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+<li class='mutator'>MATH_MUTATOR</li>
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+<li class='mutator'>NULL_RETURN_VALUES</li>
+<li class='mutator'>PRIMITIVE_RETURN_VALS_MUTATOR</li>
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>org.biojava.nbio.core.sequence.DNATest.bogusSequence(org.biojava.nbio.core.sequence.DNATest) (3 ms)</li><li>org.biojava.nbio.core.sequence.DNATest.kmerOverlapExceedingSequenceLength(org.biojava.nbio.core.sequence.DNATest) (2 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testProteinSequenceFactoring[5](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (85793 ms)</li><li>org.biojava.nbio.core.sequence.io.FastaWriterTest.writeBasicFasta(org.biojava.nbio.core.sequence.io.FastaWriterTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.DNATest.reverse(org.biojava.nbio.core.sequence.DNATest) (3 ms)</li><li>org.biojava.nbio.core.sequence.location.LocationTest.testBasicCircularLocation(org.biojava.nbio.core.sequence.location.LocationTest) (87 ms)</li><li>org.biojava.nbio.core.sequence.io.FastaWriterTest.writeFastaEqualToLineLength(org.biojava.nbio.core.sequence.io.FastaWriterTest) (0 ms)</li><li>org.biojava.nbio.core.sequence.io.GenbankWriterTest.testProcess(org.biojava.nbio.core.sequence.io.GenbankWriterTest) (12 ms)</li><li>org.biojava.nbio.core.sequence.EditSequenceTest.substitute(org.biojava.nbio.core.sequence.EditSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.SequenceViewTest.testLastIndexOf(org.biojava.nbio.core.sequence.SequenceViewTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.DNATest.respectCase(org.biojava.nbio.core.sequence.DNATest) (2 ms)</li><li>org.biojava.nbio.core.sequence.location.TargetedLocationParserTest.locationTest[0](org.biojava.nbio.core.sequence.location.TargetedLocationParserTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testFeatures[1](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (28789 ms)</li><li>org.biojava.nbio.core.sequence.location.TargetedLocationParserTest.locationTest[2](org.biojava.nbio.core.sequence.location.TargetedLocationParserTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.DNATest.gc(org.biojava.nbio.core.sequence.DNATest) (2 ms)</li><li>org.biojava.nbio.core.sequence.SequenceViewTest.testGetCompoundAt(org.biojava.nbio.core.sequence.SequenceViewTest) (0 ms)</li><li>org.biojava.nbio.core.sequence.TranslationTest (2036 ms)</li><li>org.biojava.nbio.core.sequence.DNATest.composition(org.biojava.nbio.core.sequence.DNATest) (3 ms)</li><li>org.biojava.nbio.core.search.io.HspTest (13 ms)</li><li>org.biojava.nbio.core.sequence.DNATest.subSequence(org.biojava.nbio.core.sequence.DNATest) (3 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testCountCompounds(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (9 ms)</li><li>org.biojava.nbio.core.sequence.io.GenbankCookbookTest (2366 ms)</li><li>org.biojava.nbio.core.sequence.EditSequenceTest.badSubstitute(org.biojava.nbio.core.sequence.EditSequenceTest) (3 ms)</li><li>org.biojava.nbio.core.sequence.DNATest.fourBit(org.biojava.nbio.core.sequence.DNATest) (3 ms)</li><li>org.biojava.nbio.core.sequence.DNATest.badTwoBit(org.biojava.nbio.core.sequence.DNATest) (4 ms)</li><li>org.biojava.nbio.core.sequence.SequenceViewTest.testInverse(org.biojava.nbio.core.sequence.SequenceViewTest) (0 ms)</li><li>org.biojava.nbio.core.sequence.JoiningSequenceReaderTest.canScan(org.biojava.nbio.core.sequence.JoiningSequenceReaderTest) (0 ms)</li><li>org.biojava.nbio.core.sequence.location.LocationTest.testSubLocations(org.biojava.nbio.core.sequence.location.LocationTest) (2 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testFeatures[2](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (29139 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testFeatures[5](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (49669 ms)</li><li>org.biojava.nbio.core.sequence.DNATest.kmerOverlap(org.biojava.nbio.core.sequence.DNATest) (2 ms)</li><li>org.biojava.nbio.core.sequence.DNATest.translateToRna(org.biojava.nbio.core.sequence.DNATest) (51 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testProteinSequenceFactoring[2](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (56652 ms)</li><li>org.biojava.nbio.core.sequence.DNATest.singleCompoundSequence(org.biojava.nbio.core.sequence.DNATest) (5 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testProteinSequenceFactoring[1](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (12091 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testToStringFormatted(org.biojava.nbio.core.alignment.SimpleProfileTest) (18 ms)</li><li>org.biojava.nbio.core.sequence.location.TargetedLocationParserTest.locationTest[1](org.biojava.nbio.core.sequence.location.TargetedLocationParserTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.DNATest.kmerNonOverlap(org.biojava.nbio.core.sequence.DNATest) (5 ms)</li><li>org.biojava.nbio.core.sequence.JoiningSequenceReaderTest.empty(org.biojava.nbio.core.sequence.JoiningSequenceReaderTest) (0 ms)</li><li>org.biojava.nbio.core.sequence.DNATest.twoBit(org.biojava.nbio.core.sequence.DNATest) (23 ms)</li><li>org.biojava.nbio.core.sequence.EditSequenceTest.insert(org.biojava.nbio.core.sequence.EditSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.io.GenbankReaderTest (61 ms)</li><li>org.biojava.nbio.core.sequence.MultipleSequenceAlignmentTest.testGetCompoundsAt(org.biojava.nbio.core.sequence.MultipleSequenceAlignmentTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.location.TargetedLocationParserTest.locationTest[3](org.biojava.nbio.core.sequence.location.TargetedLocationParserTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.DNATest.basesEquivalent(org.biojava.nbio.core.sequence.DNATest) (3 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testProteinSequenceFactoring[0](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (79949 ms)</li><li>org.biojava.nbio.core.sequence.EditSequenceTest.delete(org.biojava.nbio.core.sequence.EditSequenceTest) (32 ms)</li><li>org.biojava.nbio.core.sequence.DNATest.complement(org.biojava.nbio.core.sequence.DNATest) (3 ms)</li><li>org.biojava.nbio.core.sequence.DNATest.reverseComplement(org.biojava.nbio.core.sequence.DNATest) (8 ms)</li><li>org.biojava.nbio.core.sequence.location.LocationTest.testWithStrandSwitch(org.biojava.nbio.core.sequence.location.LocationTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.DNATest.basesEqual(org.biojava.nbio.core.sequence.DNATest) (2 ms)</li><li>org.biojava.nbio.core.sequence.DNATest.sequenceEquality(org.biojava.nbio.core.sequence.DNATest) (28 ms)</li><li>org.biojava.nbio.core.sequence.DNATest.at(org.biojava.nbio.core.sequence.DNATest) (12 ms)</li><li>org.biojava.nbio.core.sequence.TestSequenceEquals.testSameCompounds(org.biojava.nbio.core.sequence.TestSequenceEquals) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testFeatures[0](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (70063 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.5.1
+
+</body>
+</html>

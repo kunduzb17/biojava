@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.biojava.nbio.structure.io.TestMMCIFWriting
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.742 s - in org.biojava.nbio.structure.io.TestMMCIFWriting

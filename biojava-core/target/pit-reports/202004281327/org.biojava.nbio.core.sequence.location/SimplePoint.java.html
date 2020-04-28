@@ -1,0 +1,2463 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>SimplePoint.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/*</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *                    BioJava development code</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * This code may be freely distributed and modified under the</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * terms of the GNU Lesser General Public Licence.  This should</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * be distributed with the code.  If you do not have a copy,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * see:</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *      http://www.gnu.org/copyleft/lesser.html</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Copyright for this code is held jointly by the individual</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * authors.  These should be listed in @author doc comments.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * For more information on the BioJava project and its aims,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * or to join the biojava-l mailing list, visit the home page</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * at:</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *      http://www.biojava.org/</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Created on 01-21-2010</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package org.biojava.nbio.core.sequence.location;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.Serializable;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.biojava.nbio.core.sequence.location.template.Point;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.biojava.nbio.core.util.Equals;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.biojava.nbio.core.util.Hashcoder;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Basic implementation of the Point interface.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * @author ayates</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class SimplePoint implements Serializable, Point {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private static final long serialVersionUID = 1L;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private int position;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private boolean unknown;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private boolean uncertain;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;protected SimplePoint() {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;super();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;public SimplePoint(int position) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;this.position = position;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_50'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;public SimplePoint(int position, boolean unknown, boolean uncertain) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;this.position = position;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_54'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;this.unknown = unknown;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_55'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;this.uncertain = uncertain;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public Integer getPosition() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_60'/>
+60
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_60'>1</a>
+<span>
+1. getPosition : replaced Integer return value with 0 for org/biojava/nbio/core/sequence/location/SimplePoint::getPosition &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return position;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_62'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_63'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;protected void setPosition(int position) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_64'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;this.position = position;</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_65'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_66'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public boolean isUnknown() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_69'/>
+69
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_69'>2</a>
+<span>
+1. isUnknown : replaced boolean return with false for org/biojava/nbio/core/sequence/location/SimplePoint::isUnknown &rarr; SURVIVED<br/>
+2. isUnknown : replaced boolean return with true for org/biojava/nbio/core/sequence/location/SimplePoint::isUnknown &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;&#9;return unknown;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_70'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_72'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;protected void setUnknown(boolean unknown) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_73'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;this.unknown = unknown;</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_74'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_75'/>
+75
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_75'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_76'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_77'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public boolean isUncertain() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_78'/>
+78
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_78'>2</a>
+<span>
+1. isUncertain : replaced boolean return with false for org/biojava/nbio/core/sequence/location/SimplePoint::isUncertain &rarr; SURVIVED<br/>
+2. isUncertain : replaced boolean return with true for org/biojava/nbio/core/sequence/location/SimplePoint::isUncertain &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;&#9;return uncertain;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_79'/>
+79
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_79'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_80'/>
+80
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_80'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_81'/>
+81
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_81'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;protected void setUncertain(boolean uncertain) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_82'/>
+82
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_82'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;this.uncertain = uncertain;</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_83'/>
+83
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_83'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_84'/>
+84
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_84'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_85'/>
+85
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_85'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_86'/>
+86
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_86'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public Point reverse(int length) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_87'/>
+87
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_87'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;int translatedPosition = reverse(getPosition(), length);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_88'/>
+88
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_88'>1</a>
+<span>
+1. reverse : replaced return value with null for org/biojava/nbio/core/sequence/location/SimplePoint::reverse &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return new SimplePoint(translatedPosition, isUnknown(), isUncertain());</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_89'/>
+89
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_89'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_90'/>
+90
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_90'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_91'/>
+91
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_91'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_92'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public Point offset(int distance) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_93'/>
+93
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_93'>1</a>
+<span>
+1. offset : Replaced integer addition with subtraction &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;int offsetPosition = getPosition() + distance;</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_94'/>
+94
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_94'>1</a>
+<span>
+1. offset : replaced return value with null for org/biojava/nbio/core/sequence/location/SimplePoint::offset &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;return new SimplePoint(offsetPosition, isUnknown(), isUncertain());</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_95'/>
+95
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_95'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_96'/>
+96
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_96'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_97'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;protected int reverse(int position, int length) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_98'/>
+98
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_98'>3</a>
+<span>
+1. reverse : Replaced integer subtraction with addition &rarr; KILLED<br/>
+2. reverse : Replaced integer addition with subtraction &rarr; KILLED<br/>
+3. reverse : replaced int return with 0 for org/biojava/nbio/core/sequence/location/SimplePoint::reverse &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return (length - position) + 1;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_99'/>
+99
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_99'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_100'/>
+100
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_100'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_101'/>
+101
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_101'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_102'/>
+102
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_102'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public boolean equals(Object obj) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_103'/>
+103
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_103'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;boolean equals = false;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_104'/>
+104
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_104'>1</a>
+<span>
+1. equals : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;if (Equals.classEqual(this, obj)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_105'/>
+105
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_105'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;SimplePoint p = (SimplePoint) obj;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_106'/>
+106
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_106'>1</a>
+<span>
+1. equals : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;&#9;equals = (Equals.equal(getPosition(), p.getPosition())</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_107'/>
+107
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_107'>1</a>
+<span>
+1. equals : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;&#9;&#9;&#9;&#38;&#38; Equals.equal(isUncertain(), p.isUncertain())</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_108'/>
+108
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_108'>1</a>
+<span>
+1. equals : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;&#9;&#9;&#9;&#38;&#38; Equals.equal(isUnknown(), p.isUnknown()));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_109'/>
+109
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_109'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_110'/>
+110
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_110'>2</a>
+<span>
+1. equals : replaced boolean return with true for org/biojava/nbio/core/sequence/location/SimplePoint::equals &rarr; SURVIVED<br/>
+2. equals : replaced boolean return with false for org/biojava/nbio/core/sequence/location/SimplePoint::equals &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;&#9;return equals;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_111'/>
+111
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_111'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_112'/>
+112
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_112'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_113'/>
+113
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_113'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_114'/>
+114
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_114'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public int hashCode() {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_115'/>
+115
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_115'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;int r = Hashcoder.SEED;</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_116'/>
+116
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_116'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;r = Hashcoder.hash(r, getPosition());</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_117'/>
+117
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_117'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;r = Hashcoder.hash(r, isUncertain());</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_118'/>
+118
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_118'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;r = Hashcoder.hash(r, isUnknown());</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_119'/>
+119
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_119'>1</a>
+<span>
+1. hashCode : replaced int return with 0 for org/biojava/nbio/core/sequence/location/SimplePoint::hashCode &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;return r;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_120'/>
+120
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_120'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_121'/>
+121
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_121'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_122'/>
+122
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_122'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_123'/>
+123
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_123'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public String toString() {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_124'/>
+124
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_124'>1</a>
+<span>
+1. toString : replaced return value with &#34;&#34; for org/biojava/nbio/core/sequence/location/SimplePoint::toString &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;return Integer.toString(getPosition());</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_125'/>
+125
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_125'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_126'/>
+126
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_126'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_127'/>
+127
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_127'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_128'/>
+128
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_128'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public int compareTo(Point o) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_129'/>
+129
+</td>
+<td class='uncertain'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_129'>1</a>
+<span>
+1. compareTo : replaced int return with 0 for org/biojava/nbio/core/sequence/location/SimplePoint::compareTo &rarr; TIMED_OUT<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='uncertain'>&#9;&#9;return getPosition().compareTo(o.getPosition());</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_130'/>
+130
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_130'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_131'/>
+131
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_131'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_132'/>
+132
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_132'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_133'/>
+133
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_133'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public boolean isLower(Point point) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_134'/>
+134
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_134'>3</a>
+<span>
+1. isLower : replaced boolean return with true for org/biojava/nbio/core/sequence/location/SimplePoint::isLower &rarr; NO_COVERAGE<br/>
+2. isLower : changed conditional boundary &rarr; NO_COVERAGE<br/>
+3. isLower : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;return (compareTo(point) &#60; 0);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_135'/>
+135
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_135'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_136'/>
+136
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_136'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_137'/>
+137
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_137'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_138'/>
+138
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_138'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public boolean isHigher(Point point) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_139'/>
+139
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_139'>3</a>
+<span>
+1. isHigher : replaced boolean return with true for org/biojava/nbio/core/sequence/location/SimplePoint::isHigher &rarr; NO_COVERAGE<br/>
+2. isHigher : changed conditional boundary &rarr; NO_COVERAGE<br/>
+3. isHigher : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;return (compareTo(point) &#62; 0);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_140'/>
+140
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_140'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_141'/>
+141
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_141'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_142'/>
+142
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_142'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_143'/>
+143
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_143'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public Point clonePoint() {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_144'/>
+144
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_144'>1</a>
+<span>
+1. clonePoint : replaced return value with null for org/biojava/nbio/core/sequence/location/SimplePoint::clonePoint &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;return this.offset(0);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_145'/>
+145
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_145'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5ba913cb_146'/>
+146
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_146'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ba913cb_60'>60</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_60'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getPosition<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.location.LocationTest.badLocations(org.biojava.nbio.core.sequence.location.LocationTest)</span></span> replaced Integer return value with 0 for org/biojava/nbio/core/sequence/location/SimplePoint::getPosition &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ba913cb_69'>69</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_69'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isUnknown<br/><b>Killed by : </b>none</span></span> replaced boolean return with false for org/biojava/nbio/core/sequence/location/SimplePoint::isUnknown &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isUnknown<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.io.GenbankWriterTest.testProcess(org.biojava.nbio.core.sequence.io.GenbankWriterTest)</span></span> replaced boolean return with true for org/biojava/nbio/core/sequence/location/SimplePoint::isUnknown &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ba913cb_78'>78</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_78'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isUncertain<br/><b>Killed by : </b>none</span></span> replaced boolean return with false for org/biojava/nbio/core/sequence/location/SimplePoint::isUncertain &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isUncertain<br/><b>Killed by : </b>none</span></span> replaced boolean return with true for org/biojava/nbio/core/sequence/location/SimplePoint::isUncertain &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ba913cb_88'>88</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_88'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>reverse<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.location.LocationTest.testStrandFlip(org.biojava.nbio.core.sequence.location.LocationTest)</span></span> replaced return value with null for org/biojava/nbio/core/sequence/location/SimplePoint::reverse &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ba913cb_93'>93</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_93'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>offset<br/><b>Killed by : </b>none</span></span> Replaced integer addition with subtraction &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ba913cb_94'>94</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_94'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>offset<br/><b>Killed by : </b>none</span></span> replaced return value with null for org/biojava/nbio/core/sequence/location/SimplePoint::offset &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ba913cb_98'>98</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_98'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>reverse<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.location.LocationTest.testStrandFlip(org.biojava.nbio.core.sequence.location.LocationTest)</span></span> Replaced integer subtraction with addition &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>reverse<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.location.LocationTest.testStrandFlip(org.biojava.nbio.core.sequence.location.LocationTest)</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>reverse<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.location.LocationTest.testStrandFlip(org.biojava.nbio.core.sequence.location.LocationTest)</span></span> replaced int return with 0 for org/biojava/nbio/core/sequence/location/SimplePoint::reverse &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ba913cb_104'>104</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_104'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>equals<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.location.LocationTest.testStrandFlip(org.biojava.nbio.core.sequence.location.LocationTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ba913cb_106'>106</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_106'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>equals<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.location.LocationTest.testStrandFlip(org.biojava.nbio.core.sequence.location.LocationTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ba913cb_107'>107</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_107'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>equals<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.location.LocationTest.testStrandFlip(org.biojava.nbio.core.sequence.location.LocationTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ba913cb_108'>108</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_108'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>equals<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.location.LocationTest.testStrandFlip(org.biojava.nbio.core.sequence.location.LocationTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ba913cb_110'>110</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_110'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>equals<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.location.LocationTest.testStrandFlip(org.biojava.nbio.core.sequence.location.LocationTest)</span></span> replaced boolean return with false for org/biojava/nbio/core/sequence/location/SimplePoint::equals &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>equals<br/><b>Killed by : </b>none</span></span> replaced boolean return with true for org/biojava/nbio/core/sequence/location/SimplePoint::equals &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ba913cb_119'>119</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_119'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>hashCode<br/><b>Killed by : </b>none</span></span> replaced int return with 0 for org/biojava/nbio/core/sequence/location/SimplePoint::hashCode &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ba913cb_124'>124</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_124'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>none</span></span> replaced return value with &#34;&#34; for org/biojava/nbio/core/sequence/location/SimplePoint::toString &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ba913cb_129'>129</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_129'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>compareTo<br/><b>Killed by : </b>none</span></span> replaced int return with 0 for org/biojava/nbio/core/sequence/location/SimplePoint::compareTo &rarr; TIMED_OUT</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ba913cb_134'>134</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_134'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isLower<br/><b>Killed by : </b>none</span></span> replaced boolean return with true for org/biojava/nbio/core/sequence/location/SimplePoint::isLower &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isLower<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>isLower<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ba913cb_139'>139</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_139'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isHigher<br/><b>Killed by : </b>none</span></span> replaced boolean return with true for org/biojava/nbio/core/sequence/location/SimplePoint::isHigher &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isHigher<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>isHigher<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5ba913cb_144'>144</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5ba913cb_144'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>clonePoint<br/><b>Killed by : </b>none</span></span> replaced return value with null for org/biojava/nbio/core/sequence/location/SimplePoint::clonePoint &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>BOOLEAN_FALSE_RETURN</li>
+<li class='mutator'>BOOLEAN_TRUE_RETURN</li>
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+<li class='mutator'>EMPTY_RETURN_VALUES</li>
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+<li class='mutator'>MATH_MUTATOR</li>
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+<li class='mutator'>NULL_RETURN_VALUES</li>
+<li class='mutator'>PRIMITIVE_RETURN_VALS_MUTATOR</li>
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInQueryForTargetAtOutOfBounds4(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundSet(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.sequence.location.LocationTest.testBasicCircularLocation(org.biojava.nbio.core.sequence.location.LocationTest) (9 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetCompoundInQueryAtOutOfBounds3(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtSIntOutOfBounds3(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequenceIntOutOfBounds4(org.biojava.nbio.core.alignment.SimpleProfileTest) (3 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequenceIntOutOfBounds6(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtSIntOutOfBounds5(org.biojava.nbio.core.alignment.SimpleProfileTest) (3 ms)</li><li>org.biojava.nbio.core.sequence.location.LocationTest.testStrandFlip(org.biojava.nbio.core.sequence.location.LocationTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtIntIntOutOfBounds9(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testProteinSequenceFactoring[4](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (513 ms)</li><li>org.biojava.nbio.core.sequence.location.TargetedLocationParserTest.locationTest[2](org.biojava.nbio.core.sequence.location.TargetedLocationParserTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testIterator(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtSIntOutOfBounds(org.biojava.nbio.core.alignment.SimpleProfileTest) (4 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetNumGaps(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testFeatures[7](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (513 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetIndicesAtOutOfBounds4(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetSequenceIndexAt(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInTargetForQueryAtOutOfBounds3(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetCompoundInTargetAtOutOfBounds4(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (3 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtIntIntOutOfBounds7(org.biojava.nbio.core.alignment.SimpleProfileTest) (10 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetAlignmentIndexAtOutOfBounds2(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInTargetForQueryAt(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInQueryForTargetAt(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInTargetAt(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testCountCompounds(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (3 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetIndicesAtOutOfBounds(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetLocationInAlignment(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (33 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetCoverage(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (14 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetOriginalSequence(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testFeatures[2](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (2763 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testFeatures[5](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (12451 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetIndicesAt(org.biojava.nbio.core.alignment.SimpleProfileTest) (4 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetLength(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequenceIntOutOfBounds(org.biojava.nbio.core.alignment.SimpleProfileTest) (5 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetSequenceAsString(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetIndicesAtOutOfBounds2(org.biojava.nbio.core.alignment.SimpleProfileTest) (3 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetSequenceAsStringIntegerIntegerStrand(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testSimpleAlignedSequenceShort(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetNumIdenticals(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundsAtOutOfBounds4(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetSize(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.SimpleGenbankProxySequenceReaderTest.testWrongSequence(org.biojava.nbio.core.sequence.loader.SimpleGenbankProxySequenceReaderTest) (20 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtSInt(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetSequenceIndexAtOutOfBounds3(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (37 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequenceS(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundsAtOutOfBounds2(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testProteinSequenceFactoring[2](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (8408 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetLastIndexOf(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (7 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetAlignmentIndexAtOutOfBounds4(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetLastIndexOf(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testFeatures[4](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (519 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testSimpleAlignedSequenceLocal(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.io.GenbankReaderTest (54 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequenceInt(org.biojava.nbio.core.alignment.SimpleProfileTest) (17 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInTargetAtOutOfBounds3(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInQueryForTargetAtOutOfBounds2(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testProteinSequenceFactoring[3](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (509 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testToStringInt(org.biojava.nbio.core.alignment.SimpleProfileTest) (4 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtIntIntOutOfBounds5(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.sequence.location.LocationTest.badLocations(org.biojava.nbio.core.sequence.location.LocationTest) (3 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetIndicesAtOutOfBounds6(org.biojava.nbio.core.alignment.SimpleProfileTest) (5 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testSimpleProfile(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.sequence.location.InsdcParserTest.extractAccessionTest[1](org.biojava.nbio.core.sequence.location.InsdcParserTest) (0 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetCompoundInTargetAt(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetCompoundInTargetAtOutOfBounds2(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequenceIntOutOfBounds2(org.biojava.nbio.core.alignment.SimpleProfileTest) (4 ms)</li><li>org.biojava.nbio.core.sequence.location.LocationTest.testWithStrandSwitch(org.biojava.nbio.core.sequence.location.LocationTest) (0 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequences(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testFeatures[3](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (514 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInQueryForTargetAtOutOfBounds(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundsAtOutOfBounds3(org.biojava.nbio.core.alignment.SimpleProfileTest) (5 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtIntInt(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInQueryAtOutOfBounds3(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (6 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetCompoundInQueryAtOutOfBounds4(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInTargetAtOutOfBounds(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (5 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetCompoundSet(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequenceIntOutOfBounds5(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtSIntOutOfBounds4(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testProteinSequenceFactoring[5](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (6973 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetLength(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInTargetForQueryAtOutOfBounds2(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (4 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetIndexOf(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.io.GenbankWriterTest.testProcess(org.biojava.nbio.core.sequence.io.GenbankWriterTest) (7 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetIndexOf(org.biojava.nbio.core.alignment.SimpleProfileTest) (4 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundsAtOutOfBounds(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetCompoundAt(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (2 ms)</li><li>org.biojava.nbio.core.sequence.location.TargetedLocationParserTest.locationTest[0](org.biojava.nbio.core.sequence.location.TargetedLocationParserTest) (0 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testFeatures[1](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (1873 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetAsList(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetOverlapCount(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (24 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetCompoundInTargetAtOutOfBounds(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtIntIntOutOfBounds8(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequencesSArray(org.biojava.nbio.core.alignment.SimpleProfileTest) (16 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testIterator(org.biojava.nbio.core.alignment.SimpleProfileTest) (3 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInQueryAtOutOfBounds(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testSimpleAlignedSequenceLong(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInTargetForQueryAtOutOfBounds(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtSIntOutOfBounds2(org.biojava.nbio.core.alignment.SimpleProfileTest) (3 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetSequenceIndexAtOutOfBounds(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundsAt(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.search.io.HspTest (5 ms)</li><li>org.biojava.nbio.core.sequence.io.GenbankCookbookTest (3872 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetIndicesAtOutOfBounds5(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtIntIntOutOfBounds6(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetCompoundInQueryAt(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetCompoundInQueryAtOutOfBounds2(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (3 ms)</li><li>org.biojava.nbio.core.sequence.location.LocationTest.testSubLocations(org.biojava.nbio.core.sequence.location.LocationTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetAlignmentIndexAtOutOfBounds(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtIntIntOutOfBounds4(org.biojava.nbio.core.alignment.SimpleProfileTest) (6 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetStart(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetSequenceIndexAtOutOfBounds2(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testToString(org.biojava.nbio.core.alignment.SimpleProfileTest) (5 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testToString(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtIntIntOutOfBounds(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequenceIntOutOfBounds3(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInTargetAtOutOfBounds2(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetAlignmentIndexAt(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtIntIntOutOfBounds2(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundsAtOutOfBounds5(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetQuery(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testIsCircular(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInQueryAtOutOfBounds4(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testProteinSequenceFactoring[1](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (14141 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetCompoundInQueryAtOutOfBounds(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.location.TargetedLocationParserTest.locationTest[1](org.biojava.nbio.core.sequence.location.TargetedLocationParserTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testToStringFormatted(org.biojava.nbio.core.alignment.SimpleProfileTest) (7 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundsAtOutOfBounds6(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetAccession(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetTarget(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (2 ms)</li><li>org.biojava.nbio.core.sequence.location.TargetedLocationParserTest.locationTest[3](org.biojava.nbio.core.sequence.location.TargetedLocationParserTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testProteinSequenceFactoring[7](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (507 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetNumSimilars(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testIsCircular(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testProteinSequenceFactoring[0](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (17198 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetPercentageOfIdentity(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInTargetAtOutOfBounds4(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInTargetForQueryAtOutOfBounds4(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetCompoundInTargetAtOutOfBounds3(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (10 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testProteinSequenceFactoring[6](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (508 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInQueryAtOutOfBounds2(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetIndicesAtOutOfBounds3(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetSequenceIndexAtOutOfBounds4(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetNumGapPositions(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetEnd(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInQueryAt(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetOriginalSequences(org.biojava.nbio.core.alignment.SimpleProfileTest) (4 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testFeatures[6](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (511 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtIntIntOutOfBounds3(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetAlignmentIndexAtOutOfBounds3(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testFeatures[0](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (12265 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInQueryForTargetAtOutOfBounds3(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.location.InsdcParserTest.extractAccessionTest[0](org.biojava.nbio.core.sequence.location.InsdcParserTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequencesIntArray(org.biojava.nbio.core.alignment.SimpleProfileTest) (3 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.5.1
+
+</body>
+</html>

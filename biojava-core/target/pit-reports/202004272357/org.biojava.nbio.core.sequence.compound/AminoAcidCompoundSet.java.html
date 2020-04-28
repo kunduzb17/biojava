@@ -1,0 +1,3559 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>AminoAcidCompoundSet.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/*</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *                    BioJava development code</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * This code may be freely distributed and modified under the</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * terms of the GNU Lesser General Public Licence.  This should</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * be distributed with the code.  If you do not have a copy,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * see:</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *      http://www.gnu.org/copyleft/lesser.html</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Copyright for this code is held jointly by the individual</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * authors.  These should be listed in @author doc comments.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * For more information on the BioJava project and its aims,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * or to join the biojava-l mailing list, visit the home page</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * at:</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *      http://www.biojava.org/</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Created on 01-21-2010</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package org.biojava.nbio.core.sequence.compound;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.biojava.nbio.core.sequence.template.CompoundSet;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.biojava.nbio.core.sequence.template.Sequence;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.Serializable;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.*;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Set of proteinogenic amino acids.  Molecular weights are recorded in daltons (Da) as residues of a chain; monomers</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * outside of a chain would likely have an additional mass of 18.01524 Da contributed by an associated water molecule.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Currently we have different symbols to handle inserts so not as clean as it should be</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * @author Richard Holland</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * @author Scooter Willis</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * @author Mark Chapman</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class AminoAcidCompoundSet implements CompoundSet&#60;AminoAcidCompound&#62;, Serializable {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private static final long serialVersionUID = 4000344194364133456L;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;private final Map&#60;String, AminoAcidCompound&#62; aminoAcidCompoundCache = new HashMap&#60;String, AminoAcidCompound&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;private final Map&#60;String, AminoAcidCompound&#62; aminoAcidCompoundCache3Letter = new HashMap&#60;String, AminoAcidCompound&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_50'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;private final Map&#60;AminoAcidCompound, Set&#60;AminoAcidCompound&#62;&#62; equivalentsCache =</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;&#9;new HashMap&#60;AminoAcidCompound, Set&#60;AminoAcidCompound&#62;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;public AminoAcidCompoundSet() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_54'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;A&#34;, new AminoAcidCompound(this, &#34;A&#34;, &#34;Ala&#34;, &#34;Alanine&#34;, 71.0788f));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_55'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;R&#34;, new AminoAcidCompound(this, &#34;R&#34;, &#34;Arg&#34;, &#34;Arginine&#34;, 156.1875f));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;N&#34;, new AminoAcidCompound(this, &#34;N&#34;, &#34;Asn&#34;, &#34;Asparagine&#34;, 114.1039f));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;D&#34;, new AminoAcidCompound(this, &#34;D&#34;, &#34;Asp&#34;, &#34;Aspartic acid&#34;, 115.0886f));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;C&#34;, new AminoAcidCompound(this, &#34;C&#34;, &#34;Cys&#34;, &#34;Cysteine&#34;, 103.1388f));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;E&#34;, new AminoAcidCompound(this, &#34;E&#34;, &#34;Glu&#34;, &#34;Glutamic acid&#34;, 129.1155f));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;Q&#34;, new AminoAcidCompound(this, &#34;Q&#34;, &#34;Gln&#34;, &#34;Glutamine&#34;, 128.1307f));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;G&#34;, new AminoAcidCompound(this, &#34;G&#34;, &#34;Gly&#34;, &#34;Glycine&#34;, 57.0519f));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_62'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;H&#34;, new AminoAcidCompound(this, &#34;H&#34;, &#34;His&#34;, &#34;Histidine&#34;, 137.1411f));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_63'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;I&#34;, new AminoAcidCompound(this, &#34;I&#34;, &#34;Ile&#34;, &#34;Isoleucine&#34;, 113.1594f));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_64'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;L&#34;, new AminoAcidCompound(this, &#34;L&#34;, &#34;Leu&#34;, &#34;Leucine&#34;, 113.1594f));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_65'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;K&#34;, new AminoAcidCompound(this, &#34;K&#34;, &#34;Lys&#34;, &#34;Lysine&#34;, 128.1741f));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_66'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;M&#34;, new AminoAcidCompound(this, &#34;M&#34;, &#34;Met&#34;, &#34;Methionine&#34;, 131.1986f));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;F&#34;, new AminoAcidCompound(this, &#34;F&#34;, &#34;Phe&#34;, &#34;Phenylalanine&#34;, 147.1766f));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;P&#34;, new AminoAcidCompound(this, &#34;P&#34;, &#34;Pro&#34;, &#34;Proline&#34;, 97.1167f));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_69'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;S&#34;, new AminoAcidCompound(this, &#34;S&#34;, &#34;Ser&#34;, &#34;Serine&#34;, 87.0782f));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_70'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;T&#34;, new AminoAcidCompound(this, &#34;T&#34;, &#34;Thr&#34;, &#34;Threonine&#34;, 101.1051f));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;W&#34;, new AminoAcidCompound(this, &#34;W&#34;, &#34;Trp&#34;, &#34;Tryptophan&#34;, 186.2132f));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_72'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;Y&#34;, new AminoAcidCompound(this, &#34;Y&#34;, &#34;Tyr&#34;, &#34;Tyrosine&#34;, 163.1760f));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_73'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;V&#34;, new AminoAcidCompound(this, &#34;V&#34;, &#34;Val&#34;, &#34;Valine&#34;, 99.1326f));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_74'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;B&#34;, new AminoAcidCompound(this, &#34;B&#34;, &#34;Asx&#34;, &#34;Asparagine or Aspartic acid&#34;, null));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_75'/>
+75
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_75'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;Z&#34;, new AminoAcidCompound(this, &#34;Z&#34;, &#34;Glx&#34;, &#34;Glutamine or Glutamic acid&#34;, null));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_76'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;J&#34;, new AminoAcidCompound(this, &#34;J&#34;, &#34;Xle&#34;, &#34;Leucine or Isoleucine&#34;, null));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_77'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;X&#34;, new AminoAcidCompound(this, &#34;X&#34;, &#34;Xaa&#34;, &#34;Unspecified&#34;, null));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_78'/>
+78
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_78'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;-&#34;, new AminoAcidCompound(this, &#34;-&#34;, &#34;---&#34;, &#34;Unspecified&#34;, null));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_79'/>
+79
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_79'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;.&#34;, new AminoAcidCompound(this, &#34;.&#34;, &#34;...&#34;, &#34;Unspecified&#34;, null));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_80'/>
+80
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_80'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;_&#34;, new AminoAcidCompound(this, &#34;_&#34;, &#34;___&#34;, &#34;Unspecified&#34;, null));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_81'/>
+81
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_81'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;*&#34;, new AminoAcidCompound(this, &#34;*&#34;, &#34;***&#34;, &#34;Stop&#34;, null));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_82'/>
+82
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_82'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_83'/>
+83
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_83'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;//Selenocysteine - this is encoded by UGA with the presence</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_84'/>
+84
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_84'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;//of a SECIS element (SElenoCysteine Insertion Sequence) in the mRNA</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_85'/>
+85
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_85'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;//and is a post-translation modification</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_86'/>
+86
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_86'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;U&#34;, new AminoAcidCompound(this, &#34;U&#34;, &#34;Sec&#34;, &#34;Selenocysteine&#34;, 150.0388f));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_87'/>
+87
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_87'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_88'/>
+88
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_88'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;//Pyrrolysine is encoded by UAG in mRNA (normally Amber stop codon) which is translated to</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_89'/>
+89
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_89'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;//this amino acid under the presence of pylT which creates an anti-codon CUA &#38; pylS</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_90'/>
+90
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_90'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;//which then does the actual conversion to Pyl.</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_91'/>
+91
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_91'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;aminoAcidCompoundCache.put(&#34;O&#34;, new AminoAcidCompound(this, &#34;O&#34;, &#34;Pyl&#34;, &#34;Pyrrolysine&#34;, 255.3172f));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_92'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_93'/>
+93
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_93'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;for(String oneLtr : aminoAcidCompoundCache.keySet()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_94'/>
+94
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_94'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;AminoAcidCompound aa = aminoAcidCompoundCache.get(oneLtr);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_95'/>
+95
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_95'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;String threeLtr = aa.getLongName().toUpperCase();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_96'/>
+96
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_96'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;aminoAcidCompoundCache3Letter.put(threeLtr, aa);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_97'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_98'/>
+98
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_98'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_99'/>
+99
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_99'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_100'/>
+100
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_100'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_101'/>
+101
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_101'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public String getStringForCompound(AminoAcidCompound compound) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_102'/>
+102
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_102'>1</a>
+<span>
+1. getStringForCompound : replaced return value with &#34;&#34; for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::getStringForCompound &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;&#9;return compound.toString();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_103'/>
+103
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_103'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_104'/>
+104
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_104'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_105'/>
+105
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_105'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_106'/>
+106
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_106'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public AminoAcidCompound getCompoundForString(String string) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_107'/>
+107
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_107'>1</a>
+<span>
+1. getCompoundForString : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;if (string.length() == 0) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_108'/>
+108
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_108'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;return null;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_109'/>
+109
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_109'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_110'/>
+110
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_110'>1</a>
+<span>
+1. getCompoundForString : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;if (string.length() == 3) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_111'/>
+111
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_111'>1</a>
+<span>
+1. getCompoundForString : replaced return value with null for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::getCompoundForString &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;return this.aminoAcidCompoundCache3Letter.get(string.toUpperCase());</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_112'/>
+112
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_112'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_113'/>
+113
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_113'>2</a>
+<span>
+1. getCompoundForString : changed conditional boundary &rarr; KILLED<br/>
+2. getCompoundForString : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;if (string.length() &#62; this.getMaxSingleCompoundStringLength()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_114'/>
+114
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_114'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;throw new IllegalArgumentException(&#34;String supplied (&#34;+string+&#34;) is too long. Max is &#34;+getMaxSingleCompoundStringLength());</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_115'/>
+115
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_115'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_116'/>
+116
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_116'>1</a>
+<span>
+1. getCompoundForString : replaced return value with null for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::getCompoundForString &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return this.aminoAcidCompoundCache.get(string.toUpperCase());</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_117'/>
+117
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_117'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_118'/>
+118
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_118'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_119'/>
+119
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_119'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_120'/>
+120
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_120'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public int getMaxSingleCompoundStringLength() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_121'/>
+121
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_121'>1</a>
+<span>
+1. getMaxSingleCompoundStringLength : replaced int return with 0 for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::getMaxSingleCompoundStringLength &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return 1;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_122'/>
+122
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_122'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_123'/>
+123
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_123'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_124'/>
+124
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_124'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_125'/>
+125
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_125'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_126'/>
+126
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_126'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public boolean isCompoundStringLengthEqual() {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_127'/>
+127
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_127'>1</a>
+<span>
+1. isCompoundStringLengthEqual : replaced boolean return with false for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::isCompoundStringLengthEqual &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;return true;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_128'/>
+128
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_128'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_129'/>
+129
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_129'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_130'/>
+130
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_130'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;private final static AminoAcidCompoundSet aminoAcidCompoundSet = new AminoAcidCompoundSet();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_131'/>
+131
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_131'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_132'/>
+132
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_132'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public static AminoAcidCompoundSet getAminoAcidCompoundSet() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_133'/>
+133
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_133'>1</a>
+<span>
+1. getAminoAcidCompoundSet : replaced return value with null for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::getAminoAcidCompoundSet &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return aminoAcidCompoundSet;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_134'/>
+134
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_134'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_135'/>
+135
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_135'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_136'/>
+136
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_136'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_137'/>
+137
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_137'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public boolean compoundsEquivalent(AminoAcidCompound compoundOne, AminoAcidCompound compoundTwo) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_138'/>
+138
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_138'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;Set&#60;AminoAcidCompound&#62; equivalents = getEquivalentCompounds(compoundOne);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_139'/>
+139
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_139'>3</a>
+<span>
+1. compoundsEquivalent : replaced boolean return with true for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::compoundsEquivalent &rarr; NO_COVERAGE<br/>
+2. compoundsEquivalent : negated conditional &rarr; NO_COVERAGE<br/>
+3. compoundsEquivalent : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;return (equivalents != null) &#38;&#38; equivalents.contains(compoundTwo);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_140'/>
+140
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_140'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_141'/>
+141
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_141'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_142'/>
+142
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_142'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_143'/>
+143
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_143'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public Set&#60;AminoAcidCompound&#62; getEquivalentCompounds(AminoAcidCompound compound) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_144'/>
+144
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_144'>1</a>
+<span>
+1. getEquivalentCompounds : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;if (equivalentsCache.isEmpty()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_145'/>
+145
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_145'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;&#9;// most compounds are equivalent to themselves alone</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_146'/>
+146
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_146'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;for (AminoAcidCompound c : aminoAcidCompoundCache.values()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_147'/>
+147
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_147'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;&#9;equivalentsCache.put(c, Collections.singleton(c));</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_148'/>
+148
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_148'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_149'/>
+149
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_149'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;&#9;// ambiguous Asparagine or Aspartic acid</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_150'/>
+150
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_150'>1</a>
+<span>
+1. getEquivalentCompounds : removed call to org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::addAmbiguousEquivalents &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;addAmbiguousEquivalents(&#34;N&#34;, &#34;D&#34;, &#34;B&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_151'/>
+151
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_151'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;&#9;// ambiguous Glutamine or Glutamic acid</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_152'/>
+152
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_152'>1</a>
+<span>
+1. getEquivalentCompounds : removed call to org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::addAmbiguousEquivalents &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;addAmbiguousEquivalents(&#34;E&#34;, &#34;Q&#34;, &#34;Z&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_153'/>
+153
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_153'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;&#9;// ambiguous Leucine or Isoleucine</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_154'/>
+154
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_154'>1</a>
+<span>
+1. getEquivalentCompounds : removed call to org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::addAmbiguousEquivalents &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;addAmbiguousEquivalents(&#34;I&#34;, &#34;L&#34;, &#34;J&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_155'/>
+155
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_155'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;&#9;// ambiguous gaps</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_156'/>
+156
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_156'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;&#9;AminoAcidCompound gap1, gap2, gap3;</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_157'/>
+157
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_157'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;Set&#60;AminoAcidCompound&#62; gaps = new HashSet&#60;AminoAcidCompound&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_158'/>
+158
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_158'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;gaps.add(gap1 = aminoAcidCompoundCache.get(&#34;-&#34;));</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_159'/>
+159
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_159'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;gaps.add(gap2 = aminoAcidCompoundCache.get(&#34;.&#34;));</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_160'/>
+160
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_160'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;gaps.add(gap3 = aminoAcidCompoundCache.get(&#34;_&#34;));</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_161'/>
+161
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_161'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;equivalentsCache.put(gap1, gaps);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_162'/>
+162
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_162'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;equivalentsCache.put(gap2, gaps);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_163'/>
+163
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_163'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;equivalentsCache.put(gap3, gaps);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_164'/>
+164
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_164'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;&#9;// X is never equivalent, even to itself</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_165'/>
+165
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_165'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;equivalentsCache.put(aminoAcidCompoundCache.get(&#34;X&#34;), new HashSet&#60;AminoAcidCompound&#62;());</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_166'/>
+166
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_166'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_167'/>
+167
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_167'>1</a>
+<span>
+1. getEquivalentCompounds : replaced return value with Collections.emptyList for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::getEquivalentCompounds &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;return equivalentsCache.get(compound);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_168'/>
+168
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_168'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_169'/>
+169
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_169'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_170'/>
+170
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_170'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;// helper method to initialize the equivalent sets for 2 amino acid compounds and their ambiguity compound</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_171'/>
+171
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_171'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private void addAmbiguousEquivalents(String one, String two, String either) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_172'/>
+172
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_172'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;Set&#60;AminoAcidCompound&#62; equivalents;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_173'/>
+173
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_173'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;AminoAcidCompound cOne, cTwo, cEither;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_174'/>
+174
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_174'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_175'/>
+175
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_175'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;equivalents = new HashSet&#60;AminoAcidCompound&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_176'/>
+176
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_176'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;equivalents.add(cOne = aminoAcidCompoundCache.get(one));</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_177'/>
+177
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_177'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;equivalents.add(cTwo = aminoAcidCompoundCache.get(two));</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_178'/>
+178
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_178'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;equivalents.add(cEither = aminoAcidCompoundCache.get(either));</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_179'/>
+179
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_179'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;equivalentsCache.put(cEither, equivalents);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_180'/>
+180
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_180'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_181'/>
+181
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_181'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;equivalents = new HashSet&#60;AminoAcidCompound&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_182'/>
+182
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_182'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;equivalents.add(cOne);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_183'/>
+183
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_183'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;equivalents.add(cEither);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_184'/>
+184
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_184'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;equivalentsCache.put(cOne, equivalents);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_185'/>
+185
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_185'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_186'/>
+186
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_186'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;equivalents = new HashSet&#60;AminoAcidCompound&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_187'/>
+187
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_187'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;equivalents.add(cTwo);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_188'/>
+188
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_188'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;equivalents.add(cEither);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_189'/>
+189
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_189'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;equivalentsCache.put(cTwo, equivalents);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_190'/>
+190
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_190'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_191'/>
+191
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_191'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_192'/>
+192
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_192'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_193'/>
+193
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_193'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public boolean hasCompound(AminoAcidCompound compound) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_194'/>
+194
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_194'>2</a>
+<span>
+1. hasCompound : replaced boolean return with false for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::hasCompound &rarr; NO_COVERAGE<br/>
+2. hasCompound : replaced boolean return with true for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::hasCompound &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;return aminoAcidCompoundCache.containsValue(compound);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_195'/>
+195
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_195'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_196'/>
+196
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_196'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_197'/>
+197
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_197'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_198'/>
+198
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_198'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public boolean isValidSequence(Sequence&#60;AminoAcidCompound&#62; sequence) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_199'/>
+199
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_199'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;for (AminoAcidCompound compound: sequence) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_200'/>
+200
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_200'>1</a>
+<span>
+1. isValidSequence : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;if (!hasCompound(compound)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_201'/>
+201
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_201'>1</a>
+<span>
+1. isValidSequence : replaced boolean return with true for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::isValidSequence &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;&#9;&#9;return false;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_202'/>
+202
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_202'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_203'/>
+203
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_203'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_204'/>
+204
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_204'>1</a>
+<span>
+1. isValidSequence : replaced boolean return with false for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::isValidSequence &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;return true;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_205'/>
+205
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_205'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_206'/>
+206
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_206'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_207'/>
+207
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_207'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_208'/>
+208
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_208'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public List&#60;AminoAcidCompound&#62; getAllCompounds() {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_209'/>
+209
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_209'>1</a>
+<span>
+1. getAllCompounds : replaced return value with Collections.emptyList for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::getAllCompounds &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;return new ArrayList&#60;AminoAcidCompound&#62;(aminoAcidCompoundCache.values());</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_210'/>
+210
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_210'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_211'/>
+211
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_211'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_212'/>
+212
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_212'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_213'/>
+213
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_213'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_214'/>
+214
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_214'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public boolean isComplementable() {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_215'/>
+215
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_215'>1</a>
+<span>
+1. isComplementable : replaced boolean return with true for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::isComplementable &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;&#9;return false;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_216'/>
+216
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_216'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7ca62772_217'/>
+217
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_217'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_102'>102</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_102'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getStringForCompound<br/><b>Killed by : </b>none</span></span> replaced return value with &#34;&#34; for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::getStringForCompound &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_107'>107</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_107'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCompoundForString<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.TestSequenceEquals.testSameCompounds(org.biojava.nbio.core.sequence.TestSequenceEquals)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_110'>110</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_110'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCompoundForString<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.TestSequenceEquals.testSameCompounds(org.biojava.nbio.core.sequence.TestSequenceEquals)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_111'>111</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_111'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCompoundForString<br/><b>Killed by : </b>none</span></span> replaced return value with null for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::getCompoundForString &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_113'>113</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_113'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCompoundForString<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.TestSequenceEquals.testSameCompounds(org.biojava.nbio.core.sequence.TestSequenceEquals)</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getCompoundForString<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.TestSequenceEquals.testSameCompounds(org.biojava.nbio.core.sequence.TestSequenceEquals)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_116'>116</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_116'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCompoundForString<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.TestSequenceEquals.testSameCompounds(org.biojava.nbio.core.sequence.TestSequenceEquals)</span></span> replaced return value with null for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::getCompoundForString &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_121'>121</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_121'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getMaxSingleCompoundStringLength<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.TestSequenceEquals.testSameCompounds(org.biojava.nbio.core.sequence.TestSequenceEquals)</span></span> replaced int return with 0 for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::getMaxSingleCompoundStringLength &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_127'>127</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_127'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isCompoundStringLengthEqual<br/><b>Killed by : </b>none</span></span> replaced boolean return with false for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::isCompoundStringLengthEqual &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_133'>133</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_133'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getAminoAcidCompoundSet<br/><b>Killed by : </b>org.biojava.nbio.core.sequence.TestSequenceEquals.testSameCompounds(org.biojava.nbio.core.sequence.TestSequenceEquals)</span></span> replaced return value with null for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::getAminoAcidCompoundSet &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_139'>139</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_139'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>compoundsEquivalent<br/><b>Killed by : </b>none</span></span> replaced boolean return with true for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::compoundsEquivalent &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>compoundsEquivalent<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>compoundsEquivalent<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_144'>144</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_144'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getEquivalentCompounds<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_150'>150</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_150'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getEquivalentCompounds<br/><b>Killed by : </b>none</span></span> removed call to org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::addAmbiguousEquivalents &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_152'>152</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_152'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getEquivalentCompounds<br/><b>Killed by : </b>none</span></span> removed call to org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::addAmbiguousEquivalents &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_154'>154</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_154'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getEquivalentCompounds<br/><b>Killed by : </b>none</span></span> removed call to org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::addAmbiguousEquivalents &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_167'>167</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_167'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getEquivalentCompounds<br/><b>Killed by : </b>none</span></span> replaced return value with Collections.emptyList for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::getEquivalentCompounds &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_194'>194</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_194'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>hasCompound<br/><b>Killed by : </b>none</span></span> replaced boolean return with false for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::hasCompound &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>hasCompound<br/><b>Killed by : </b>none</span></span> replaced boolean return with true for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::hasCompound &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_200'>200</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_200'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isValidSequence<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_201'>201</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_201'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isValidSequence<br/><b>Killed by : </b>none</span></span> replaced boolean return with true for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::isValidSequence &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_204'>204</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_204'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isValidSequence<br/><b>Killed by : </b>none</span></span> replaced boolean return with false for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::isValidSequence &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_209'>209</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_209'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getAllCompounds<br/><b>Killed by : </b>none</span></span> replaced return value with Collections.emptyList for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::getAllCompounds &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7ca62772_215'>215</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7ca62772_215'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isComplementable<br/><b>Killed by : </b>none</span></span> replaced boolean return with true for org/biojava/nbio/core/sequence/compound/AminoAcidCompoundSet::isComplementable &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>BOOLEAN_FALSE_RETURN</li>
+<li class='mutator'>BOOLEAN_TRUE_RETURN</li>
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+<li class='mutator'>EMPTY_RETURN_VALUES</li>
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+<li class='mutator'>MATH_MUTATOR</li>
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+<li class='mutator'>NULL_RETURN_VALUES</li>
+<li class='mutator'>PRIMITIVE_RETURN_VALS_MUTATOR</li>
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInQueryForTargetAtOutOfBounds4(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundSet(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetCompoundInQueryAtOutOfBounds3(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (5 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtSIntOutOfBounds3(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequenceIntOutOfBounds4(org.biojava.nbio.core.alignment.SimpleProfileTest) (5 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequenceIntOutOfBounds6(org.biojava.nbio.core.alignment.SimpleProfileTest) (5 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtSIntOutOfBounds5(org.biojava.nbio.core.alignment.SimpleProfileTest) (22 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtIntIntOutOfBounds9(org.biojava.nbio.core.alignment.SimpleProfileTest) (5 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testProteinSequenceFactoring[4](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (522 ms)</li><li>org.biojava.nbio.core.sequence.location.TargetedLocationParserTest.locationTest[2](org.biojava.nbio.core.sequence.location.TargetedLocationParserTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testIterator(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtSIntOutOfBounds(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetNumGaps(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (3 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetIndicesAtOutOfBounds4(org.biojava.nbio.core.alignment.SimpleProfileTest) (3 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testFeatures[7](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (523 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetSequenceIndexAt(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInTargetForQueryAtOutOfBounds3(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetCompoundInTargetAtOutOfBounds4(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (3 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtIntIntOutOfBounds7(org.biojava.nbio.core.alignment.SimpleProfileTest) (4 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetAlignmentIndexAtOutOfBounds2(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInTargetForQueryAt(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInQueryForTargetAt(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (3 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInTargetAt(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testCountCompounds(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (9 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetIndicesAtOutOfBounds(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetLocationInAlignment(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (3 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetCoverage(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (4 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetOriginalSequence(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (6 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testFeatures[2](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (29139 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetIndicesAt(org.biojava.nbio.core.alignment.SimpleProfileTest) (5 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testFeatures[5](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (49669 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetLength(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequenceIntOutOfBounds(org.biojava.nbio.core.alignment.SimpleProfileTest) (5 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetSequenceAsString(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (9 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetIndicesAtOutOfBounds2(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.DNATest.translateToRna(org.biojava.nbio.core.sequence.DNATest) (51 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetSequenceAsStringIntegerIntegerStrand(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (3 ms)</li><li>org.biojava.nbio.core.sequence.io.GenericFastaHeaderParserTest (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testSimpleAlignedSequenceShort(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetNumIdenticals(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundsAtOutOfBounds4(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetSize(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.SimpleGenbankProxySequenceReaderTest.testWrongSequence(org.biojava.nbio.core.sequence.loader.SimpleGenbankProxySequenceReaderTest) (3078 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtSInt(org.biojava.nbio.core.alignment.SimpleProfileTest) (8 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetSequenceIndexAtOutOfBounds3(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (7 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequenceS(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundsAtOutOfBounds2(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testProteinSequenceFactoring[2](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (56652 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetLastIndexOf(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (4 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetAlignmentIndexAtOutOfBounds4(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetLastIndexOf(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testFeatures[4](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (512 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testSimpleAlignedSequenceLocal(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequenceInt(org.biojava.nbio.core.alignment.SimpleProfileTest) (9 ms)</li><li>org.biojava.nbio.core.sequence.io.GenbankReaderTest (61 ms)</li><li>org.biojava.nbio.core.sequence.MultipleSequenceAlignmentTest.testGetCompoundsAt(org.biojava.nbio.core.sequence.MultipleSequenceAlignmentTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInTargetAtOutOfBounds3(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (3 ms)</li><li>org.biojava.nbio.core.sequence.io.FastaReaderTest (139 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInQueryForTargetAtOutOfBounds2(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testProteinSequenceFactoring[3](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (516 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testToStringInt(org.biojava.nbio.core.alignment.SimpleProfileTest) (3 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtIntIntOutOfBounds5(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetIndicesAtOutOfBounds6(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testSimpleProfile(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetCompoundInTargetAt(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetCompoundInTargetAtOutOfBounds2(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequenceIntOutOfBounds2(org.biojava.nbio.core.alignment.SimpleProfileTest) (5 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequences(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.sequence.TestSequenceEquals.testSameCompounds(org.biojava.nbio.core.sequence.TestSequenceEquals) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testFeatures[3](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (521 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundsAtOutOfBounds3(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInQueryForTargetAtOutOfBounds(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (6 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtIntInt(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInQueryAtOutOfBounds3(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (46 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetCompoundInQueryAtOutOfBounds4(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInTargetAtOutOfBounds(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (0 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetCompoundSet(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (4 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequenceIntOutOfBounds5(org.biojava.nbio.core.alignment.SimpleProfileTest) (3 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtSIntOutOfBounds4(org.biojava.nbio.core.alignment.SimpleProfileTest) (4 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInTargetForQueryAtOutOfBounds2(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (3 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetLength(org.biojava.nbio.core.alignment.SimpleProfileTest) (6 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testProteinSequenceFactoring[5](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (85793 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetIndexOf(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetIndexOf(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundsAtOutOfBounds(org.biojava.nbio.core.alignment.SimpleProfileTest) (7 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetCompoundAt(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetOverlapCount(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (5 ms)</li><li>org.biojava.nbio.core.sequence.location.TargetedLocationParserTest.locationTest[0](org.biojava.nbio.core.sequence.location.TargetedLocationParserTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetAsList(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (31 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testFeatures[1](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (28789 ms)</li><li>org.biojava.nbio.core.sequence.io.CasePreservingProteinSequenceCreatorTest.testConstructor(org.biojava.nbio.core.sequence.io.CasePreservingProteinSequenceCreatorTest) (5 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetCompoundInTargetAtOutOfBounds(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (4 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtIntIntOutOfBounds8(org.biojava.nbio.core.alignment.SimpleProfileTest) (9 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequencesSArray(org.biojava.nbio.core.alignment.SimpleProfileTest) (6 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testIterator(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.TranslationTest (2036 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInQueryAtOutOfBounds(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInTargetForQueryAtOutOfBounds(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (3 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtSIntOutOfBounds2(org.biojava.nbio.core.alignment.SimpleProfileTest) (6 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testSimpleAlignedSequenceLong(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (27 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetSequenceIndexAtOutOfBounds(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundsAt(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetIndicesAtOutOfBounds5(org.biojava.nbio.core.alignment.SimpleProfileTest) (4 ms)</li><li>org.biojava.nbio.core.sequence.io.GenbankCookbookTest (2366 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtIntIntOutOfBounds6(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetCompoundInQueryAt(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (0 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetCompoundInQueryAtOutOfBounds2(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (0 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetAlignmentIndexAtOutOfBounds(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (23 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtIntIntOutOfBounds4(org.biojava.nbio.core.alignment.SimpleProfileTest) (42 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetStart(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetSequenceIndexAtOutOfBounds2(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (3 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testToString(org.biojava.nbio.core.alignment.SimpleProfileTest) (6 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testToString(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtIntIntOutOfBounds(org.biojava.nbio.core.alignment.SimpleProfileTest) (5 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequenceIntOutOfBounds3(org.biojava.nbio.core.alignment.SimpleProfileTest) (18 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInTargetAtOutOfBounds2(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetAlignmentIndexAt(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtIntIntOutOfBounds2(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundsAtOutOfBounds5(org.biojava.nbio.core.alignment.SimpleProfileTest) (10 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetQuery(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testIsCircular(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInQueryAtOutOfBounds4(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetCompoundInQueryAtOutOfBounds(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (0 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testProteinSequenceFactoring[1](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (12091 ms)</li><li>org.biojava.nbio.core.sequence.location.TargetedLocationParserTest.locationTest[1](org.biojava.nbio.core.sequence.location.TargetedLocationParserTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testToStringFormatted(org.biojava.nbio.core.alignment.SimpleProfileTest) (18 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundsAtOutOfBounds6(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetTarget(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetAccession(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (17 ms)</li><li>org.biojava.nbio.core.sequence.location.TargetedLocationParserTest.locationTest[3](org.biojava.nbio.core.sequence.location.TargetedLocationParserTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testProteinSequenceFactoring[7](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (523 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetNumSimilars(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (5 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testIsCircular(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testProteinSequenceFactoring[0](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (79949 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetPercentageOfIdentity(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInTargetAtOutOfBounds4(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInTargetForQueryAtOutOfBounds4(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetCompoundInTargetAtOutOfBounds3(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testProteinSequenceFactoring[6](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (520 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInQueryAtOutOfBounds2(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetIndicesAtOutOfBounds3(org.biojava.nbio.core.alignment.SimpleProfileTest) (9 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetSequenceIndexAtOutOfBounds4(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (2 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetNumGapPositions(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetEnd(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInQueryAt(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (3 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetOriginalSequences(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetCompoundAtIntIntOutOfBounds3(org.biojava.nbio.core.alignment.SimpleProfileTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testFeatures[6](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (601 ms)</li><li>org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest.testGetAlignmentIndexAtOutOfBounds3(org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest) (1 ms)</li><li>org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest.testFeatures[0](org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest) (70063 ms)</li><li>org.biojava.nbio.core.alignment.SimpleSequencePairTest.testGetIndexInQueryForTargetAtOutOfBounds3(org.biojava.nbio.core.alignment.SimpleSequencePairTest) (1 ms)</li><li>org.biojava.nbio.core.alignment.SimpleProfileTest.testGetAlignedSequencesIntArray(org.biojava.nbio.core.alignment.SimpleProfileTest) (2 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.5.1
+
+</body>
+</html>

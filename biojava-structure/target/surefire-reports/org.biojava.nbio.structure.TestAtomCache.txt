@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.biojava.nbio.structure.TestAtomCache
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.058 s - in org.biojava.nbio.structure.TestAtomCache

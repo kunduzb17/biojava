@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.biojava.nbio.alignment.SimpleProfileProfileAlignerTest
+-------------------------------------------------------------------------------
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.576 s - in org.biojava.nbio.alignment.SimpleProfileProfileAlignerTest

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.biojava.nbio.structure.io.FastaAFPChainConverterTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.673 s - in org.biojava.nbio.structure.io.FastaAFPChainConverterTest

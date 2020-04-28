@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.biojava.nbio.core.search.io.blast.BlastXMLParserTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 7.576 s - in org.biojava.nbio.core.search.io.blast.BlastXMLParserTest

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.biojava.nbio.structure.rcsb.RCSBDescriptionFactoryTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.122 s - in org.biojava.nbio.structure.rcsb.RCSBDescriptionFactoryTest
